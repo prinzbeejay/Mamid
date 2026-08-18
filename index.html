@@ -1,0 +1,444 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>MAMID — Abdulhamid & Mariam</title>
+<meta name="description" content="The MAMID anniversary archive — Abdulhamid & Mariam, together since August 18, 2023.">
+<style>
+:root{
+  --ink:#102a43; --rose:#2563a8; --rose2:#6ea8dc; --cream:#f4f9ff;
+  --gold:#c69a5b; --white:#fff; --muted:#526b84;
+}
+*{box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{margin:0;font-family:Georgia,"Times New Roman",serif;background:var(--cream);color:var(--ink);line-height:1.75}
+a{color:inherit}
+.hero{
+  min-height:100vh; display:flex; align-items:center; justify-content:center;
+  text-align:center; padding:50px 22px; position:relative; overflow:hidden;
+  background:
+    radial-gradient(circle at 20% 20%, rgba(110,168,220,.30), transparent 28%),
+    radial-gradient(circle at 80% 70%, rgba(198,154,91,.18), transparent 30%),
+    linear-gradient(135deg,#f4f9ff,#e6f2ff);
+}
+.hero:before,.hero:after{content:"❤";position:absolute;font-size:120px;color:rgba(37,99,168,.06);animation:float 6s ease-in-out infinite}
+.hero:before{left:5%;top:10%}.hero:after{right:5%;bottom:8%;animation-delay:1.5s}
+@keyframes float{50%{transform:translateY(-18px) rotate(5deg)}}
+.hero-inner{max-width:900px;position:relative;z-index:1}
+.eyebrow{letter-spacing:.32em;text-transform:uppercase;color:var(--rose);font-size:.78rem;font-family:Arial,sans-serif}
+h1{font-size:clamp(4rem,15vw,9rem);line-height:.9;margin:20px 0 12px;letter-spacing:-.07em}
+.subtitle{font-size:clamp(1.2rem,3vw,1.8rem);margin:0 auto 25px}
+.date{display:inline-block;padding:10px 20px;border:1px solid rgba(37,99,168,.3);border-radius:999px;color:var(--rose)}
+.btn{display:inline-block;margin-top:30px;padding:13px 23px;background:var(--ink);color:#fff;text-decoration:none;border-radius:999px;font-family:Arial,sans-serif;font-size:.9rem}
+section{padding:85px 20px}
+.wrap{max-width:1050px;margin:auto}
+.section-kicker{font-family:Arial,sans-serif;color:var(--rose);letter-spacing:.18em;text-transform:uppercase;font-size:.72rem}
+h2{font-size:clamp(2rem,5vw,3.6rem);line-height:1.1;margin:10px 0 25px}
+.lead{font-size:1.15rem;color:var(--muted);max-width:760px}
+.story{display:grid;grid-template-columns:1fr 1fr;gap:28px;margin-top:35px}
+.card{background:#fff;border:1px solid #d8e8f7;border-radius:24px;padding:30px;box-shadow:0 12px 35px rgba(16,42,67,.07)}
+.timeline{position:relative;margin-top:45px;padding-left:28px;border-left:2px solid #b9d5ef}
+.timeline article{margin:0 0 38px;position:relative}
+.timeline article:before{content:"";position:absolute;left:-38px;top:8px;width:16px;height:16px;border-radius:50%;background:var(--rose);box-shadow:0 0 0 6px #fff8f5}
+.year{font-family:Arial,sans-serif;color:var(--rose);font-weight:700;font-size:.85rem;letter-spacing:.12em}
+.gallery{display:grid;grid-template-columns:repeat(3,1fr);gap:16px;margin-top:35px}
+.gallery img{width:100%;height:420px;object-fit:cover;border-radius:22px;box-shadow:0 15px 30px rgba(16,42,67,.12)}
+.quote{font-size:clamp(1.6rem,4vw,2.6rem);text-align:center;max-width:850px;margin:0 auto;font-style:italic}
+.love-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:14px;margin-top:30px}
+.love-item{padding:18px 20px;background:#fff;border-radius:16px;border:1px solid #d8e8f7}
+.love-item b{color:var(--rose)}
+.promise{background:#102a43;color:#f4f9ff}
+.promise .section-kicker{color:#e8a6b8}
+.promise .card{background:rgba(255,255,255,.08);border-color:rgba(255,255,255,.15);box-shadow:none}
+.promise-list{margin:0;padding-left:22px}
+.prayer{background:linear-gradient(135deg,#fff,#eaf4ff)}
+.final{text-align:center;background:linear-gradient(135deg,#e8f3ff,#f4f9ff);padding-bottom:110px}
+.big{font-size:clamp(2.4rem,7vw,5.5rem);line-height:1.05;margin:18px 0}
+.smallcaps{font-family:Arial,sans-serif;text-transform:uppercase;letter-spacing:.16em;font-size:.72rem;color:var(--muted)}
+.archive{display:grid;grid-template-columns:repeat(3,1fr);gap:15px;margin-top:30px}
+.archive .yearcard{padding:24px;border-radius:20px;background:#fff;border:1px solid #d8e8f7}
+.locked{opacity:.55}
+footer{text-align:center;padding:35px 20px;color:#8b7078;font-family:Arial,sans-serif;font-size:.8rem}
+@media(max-width:760px){
+  .story,.love-grid,.archive{grid-template-columns:1fr}
+  .gallery{grid-template-columns:1fr}
+  .gallery img{height:380px}
+  section{padding:65px 18px}
+}
+
+.lock-screen{
+  position:fixed;inset:0;z-index:9999;display:flex;align-items:center;justify-content:center;
+  padding:22px;background:
+  radial-gradient(circle at 20% 20%,rgba(110,168,220,.32),transparent 28%),
+  radial-gradient(circle at 80% 75%,rgba(198,154,91,.18),transparent 30%),
+  linear-gradient(135deg,#f4f9ff,#e6f2ff);
+}
+.lock-card{width:min(520px,100%);padding:42px 28px;text-align:center;background:rgba(255,255,255,.94);
+  border:1px solid #d8e8f7;border-radius:30px;box-shadow:0 25px 80px rgba(16,42,67,.16)}
+.lock-heart{font-size:3.2rem;color:#2563a8;margin-bottom:4px}
+.lock-title{font-size:clamp(3.5rem,14vw,6rem);line-height:.9;margin:12px 0}
+.lock-hint{color:#526b84}
+.lock-card input{width:100%;padding:15px 16px;border:1px solid #b9d5ef;border-radius:14px;font:inherit;outline:none;margin:8px 0 2px}
+.lock-card input:focus{border-color:#2563a8;box-shadow:0 0 0 4px rgba(184,75,104,.10)}
+.lock-card .btn{border:0;cursor:pointer}
+.wrong{height:22px;margin-top:12px;color:#2563a8;font-family:Arial,sans-serif;font-size:.82rem;visibility:hidden}
+body.locked{overflow:hidden}
+body.unlocked .lock-screen{display:none}
+
+</style>
+</head>
+<body>
+
+<div id="lockScreen" class="lock-screen">
+  <div class="lock-card">
+    <div class="lock-heart">❤</div>
+    <div class="eyebrow">A private place for us</div>
+    <h1 class="lock-title">MAMID</h1>
+    <p>Only my Angel should be opening this. 💕</p>
+    <p class="lock-hint">Enter the little word that belongs to us.</p>
+    <input id="passwordInput" type="password" placeholder="Password" autocomplete="off">
+    <button id="unlockBtn" class="btn">Unlock Our Story ❤</button>
+    <div id="wrongPassword" class="wrong">Try again, my Angel. ❤️</div>
+  </div>
+</div>
+
+
+<header class="hero" id="top">
+  <div class="hero-inner">
+    <div class="eyebrow">Our little corner of the internet</div>
+    <h1>MAMID</h1>
+    <p class="subtitle">Abdulhamid <span style="color:#2563a8">❤</span> Mariam</p>
+    <div class="date">18 August 2026 · Our Anniversary</div>
+    <p style="max-width:650px;margin:28px auto 0;color:#526b84">
+      Some love stories begin with a first date. Ours began much earlier —
+      with friendship, best friendship, and two people who slowly became home to each other.
+    </p>
+    <a class="btn" href="#story">Begin Our Story ❤</a>
+  </div>
+</header>
+
+<section id="story">
+<div class="wrap">
+  <div class="section-kicker">Chapter 01</div>
+  <h2>Before we became us.</h2>
+  <p class="lead">
+    We met in our secondary school days. Back then, Mariam was my friend.
+    Then friendship became best friendship — our padi-padi era around 2021 and 2022.
+    Somewhere along the way, something was quietly becoming much bigger than friendship.
+  </p>
+  <div class="story">
+    <div class="card">
+      <div class="year">THE FIRST MOVE</div>
+      <h3>She actually made it.</h3>
+      <p>
+        She made the first move. I noticed — I really did — but I didn't want to
+        spoil the friendship we had built. I was protecting something I already
+        valued deeply, without realizing that the thing I was protecting would
+        eventually become the love of my life.
+      </p>
+    </div>
+    <div class="card">
+      <div class="year">THE MOMENT I KNEW</div>
+      <h3>The month I couldn't reach you.</h3>
+      <p>
+        When you had that accident and I couldn't talk to you for about a month,
+        something in me changed. I was confused by how much your absence affected me.
+        Then we finally reached each other again, and the happiness I felt told me
+        what I had been refusing to say: I had fallen in love with this girl.
+      </p>
+    </div>
+  </div>
+</div>
+</section>
+
+<section>
+<div class="wrap">
+  <div class="section-kicker">Chapter 02</div>
+  <h2>And then there was MAMID.</h2>
+  <div class="timeline">
+    <article>
+      <div class="year">18 AUGUST 2023</div>
+      <h3>We became official.</h3>
+      <p>The friendship became a relationship, and our story entered a new chapter.</p>
+    </article>
+    <article>
+      <div class="year">OUR FIRST OUTING</div>
+      <h3>The park in Lagos.</h3>
+      <p>One of those memories that deserves to stay in the archive forever.</p>
+    </article>
+    <article>
+      <div class="year">A SPECIAL BIRTHDAY</div>
+      <h3>Your surprise in Ilorin.</h3>
+      <p>
+        My first birthday in Ilorin became even more special because you surprised me.
+        You have always had a way of making ordinary moments feel unforgettable.
+      </p>
+    </article>
+    <article>
+      <div class="year">2025–2026</div>
+      <h3>We faced hard days and still found our way.</h3>
+      <p>
+        It was tough. Really tough. But Alhamdulillah, we communicated, discussed,
+        kept trying and overcame it together. That matters to me more than a perfect story.
+      </p>
+    </article>
+  </div>
+</div>
+</section>
+
+<section>
+<div class="wrap">
+  <div class="section-kicker">Our memories</div>
+  <h2>Little pieces of us.</h2>
+  <div class="gallery">
+    <img src="images/memory-01.jpg" alt="Abdulhamid and Mariam walking together">
+    <img src="images/memory-02.jpg" alt="Abdulhamid and Mariam smiling together">
+    <img src="images/memory-03.jpg" alt="A birthday memory together">
+  </div>
+</div>
+</section>
+
+<section>
+<div class="wrap">
+  <div class="section-kicker">Chapter 03</div>
+  <h2>Things I love about you.</h2>
+  <div class="love-grid">
+    <div class="love-item">❤ <b>Your eyes.</b></div>
+    <div class="love-item">❤ <b>Your voice.</b></div>
+    <div class="love-item">❤ <b>Your lips.</b></div>
+    <div class="love-item">❤ <b>Your Ibeji.</b></div>
+    <div class="love-item">❤ <b>The way you talk.</b></div>
+    <div class="love-item">❤ <b>The way you care.</b></div>
+    <div class="love-item">❤ <b>Your flower.</b></div>
+    <div class="love-item">❤ <b>The way you kiss me.</b></div>
+    <div class="love-item">❤ <b>The way you handle me.</b></div>
+    <div class="love-item">❤ <b>Your playful, mischievous side.</b></div>
+    <div class="love-item">❤ <b>The way you always want your people to feel okay.</b></div>
+  </div>
+  <div class="card" style="margin-top:28px">
+    <p class="quote">“You have this motherly vibe in you. That’s one of the reasons you’re my Eleniyan.”</p>
+  </div>
+</div>
+</section>
+
+<section class="promise">
+<div class="wrap">
+  <div class="section-kicker">Chapter 04</div>
+  <h2>My promises to you.</h2>
+  <div class="card">
+    <ol class="promise-list">
+      <li>I will keep choosing you — always and always.</li>
+      <li>I will keep learning to listen to you better.</li>
+      <li>I will keep trying to understand you better.</li>
+      <li>I will listen carefully, not just hear you.</li>
+      <li>When I am angry, I will remember that anger is temporary and you are precious to me.</li>
+      <li>I will keep growing with you instead of expecting perfection from you.</li>
+      <li>I will keep praying for you, for us, and for the future Allah has planned for us.</li>
+    </ol>
+  </div>
+  <p style="text-align:center;margin-top:30px;font-size:1.2rem">
+    Even when I say I don't want to talk, even when I'm angry, I'm still checking to see if you're okay.
+    I can't stay angry at you for long. ❤
+  </p>
+</div>
+</section>
+
+<section class="prayer">
+<div class="wrap">
+  <div class="section-kicker">Chapter 05</div>
+  <h2>My prayer for my Angel.</h2>
+  <div class="card">
+    <p>
+      Ya Allah, You know what is in our hearts better than we do. Please make the road ahead
+      easy for Mariam. You know the things she is working toward, the career she is building,
+      the business she is about to start and the training she is preparing for.
+    </p>
+    <p>
+      Put barakah in her efforts. Open doors that are good for her, close doors that would harm her,
+      and give her the strength, wisdom, confidence and patience to keep moving forward.
+      Let her work become a source of dignity, provision, happiness and fulfilment.
+    </p>
+    <p>
+      Protect her, guide her, bless her family and grant her the kind of life where she can look
+      around and say, “There is nothing I want that I cannot achieve.” Give her peace in her heart,
+      success in her hands and people around her who genuinely love and support her.
+    </p>
+    <p>
+      And if it is Your will for us to continue this journey together, keep our hearts soft toward
+      each other. Give us understanding when we disagree, patience when things are hard, humility
+      when pride wants to win, and wisdom to always find our way back to peace.
+    </p>
+    <p>
+      May our love become something beautiful, responsible and lasting. May we one day look back
+      at these pages and say, <b>“Alhamdulillah, we made it.”</b> Ameen. 🤲🏽
+    </p>
+  </div>
+</div>
+</section>
+
+<section>
+<div class="wrap">
+  <div class="section-kicker">Chapter 06</div>
+  <h2>The life I pray we build.</h2>
+  <p class="quote">
+    “One day I want us to look back at this website and say:
+    Alhamdulillah, we made it and we are living it.”
+  </p>
+  <div class="card" style="margin-top:35px;text-align:center">
+    <p style="font-size:1.2rem">
+      And then I want us to show these pages to our children and grandchildren —
+      so they can see that true love lives, and that we are evidence of it.
+    </p>
+    <p><b>My Angel, may the life ahead of us be even more beautiful than the life behind us.</b></p>
+  </div>
+</div>
+</section>
+
+
+<section>
+<div class="wrap">
+  <div class="section-kicker">Chapter 07</div>
+  <h2>The message behind this whole thing.</h2>
+  <div class="card">
+    <p style="font-size:1.35rem">
+      <b>Idunnu Miii</b>, I know you would be tearing and smiling while reading all this
+      cos I'm also doing the same while creating it. 🥹❤️
+    </p>
+    <p style="font-size:1.55rem;text-align:center">
+      I love you <b>Temidayo Miii</b> 😍🥰, I love you so so much.
+    </p>
+    <p class="quote" style="margin-top:25px">
+      “I didn't want this to be just another message you read and forget.
+      I wanted to make you something you can come back to — every year,
+      every chapter, every memory — and remember that you are deeply loved.”
+    </p>
+  </div>
+</div>
+</section>
+
+<section>
+<div class="wrap">
+  <div class="section-kicker">Chapter 08 · The Anniversary Letter</div>
+  <h2>My Love ❤️</h2>
+  <div class="card">
+    <p>Happy anniversary to us, my baby, my woman, my best friend, Eleniyan Mii, Idunnu Miii, Temidayo Miii and the person who holds such a special place in my heart. 🥹❤️ Today is another beautiful reminder of how far we have come together, and honestly, words will never be enough to fully explain how much you mean to me.</p>
+
+    <p>When I look back at everything we have shared, I see so many beautiful memories, laughter, conversations, arguments, misunderstandings, forgiveness, growth, and countless moments that have brought us to where we are today. We have not always had a perfect journey, but I am grateful because through everything, there has always been something that keeps pulling my heart back to you. And that something is <b>LOVE. ❤️</b></p>
+
+    <p>I want you to know that I love you deeply. Not just for your beauty, your smile, your voice, or the way you make me feel, but for who you are as a person. I love the woman you are, the woman you are becoming, and everything that makes you uniquely YOU. I love the little things about you that you probably don't even realize I notice. I love the way you can make an ordinary day feel special simply by being part of it.</p>
+
+    <p>You have become such a huge part of my life, my thoughts, my plans and my future. Sometimes I sit down and think about how much space you occupy in my heart, and I honestly don't know how to explain it. You're not just someone I am dating; you're someone I genuinely pray to continue building my life with.</p>
+
+    <p>I know we have had our difficult moments. I know there have been times when we misunderstood each other, hurt each other, got angry, or felt like giving up. But one thing I want you to always remember is that my love for you isn't only for the easy days. I want to love you on the difficult days too. I want us to learn, grow, forgive, communicate better and become stronger together.</p>
+
+    <p>I don't promise that we will never have disagreements, because we are both human. But I promise that I will keep choosing you. I will keep trying. I will keep learning how to love you better. I will keep praying for us. And as long as we both continue to choose each other, I will continue to give this relationship my heart.</p>
+
+    <p>My love, I pray that Allah continues to guide us and protect what we have. 🤲🏽❤️ May He remove every obstacle that could come between us and give us the wisdom, patience and understanding to overcome every challenge together. May Allah put barakah in our relationship and our future, strengthen the love between us, and protect us from anything that could destroy our peace.</p>
+
+    <p>I pray that if we are truly meant for each other, Allah makes our journey to marriage easy, beautiful and blessed. May He make us good partners for one another, people who bring each other closer to Him, and may He grant us a future filled with peace, happiness, prosperity, good health and beautiful memories.</p>
+
+    <p>I pray that one day we will look back at this stage of our lives and smile because we made it through everything together. I pray that we will build a beautiful home filled with love, understanding, laughter and peace. I pray that whatever we achieve in life, we will always remember the days when we had little but still had each other.</p>
+
+    <p>And baby, I want you to know something very clearly: I am not loving you today simply because it is our anniversary. I love you every day. Today just gives me another reason to remind you.</p>
+
+    <p>I love you when you're happy.<br>
+    I love you when you're angry.<br>
+    I love you when you're doing agidi. 😂❤️<br>
+    I love you when you're playful.<br>
+    I love you when you're quiet.<br>
+    I love you when everything is going perfectly, and I love you when life gets difficult.</p>
+
+    <p>I love you in the little moments and in the big moments. I love you in the present, and I pray that I get the privilege to love you through many more years of our lives.</p>
+
+    <p>Thank you for being part of my story. Thank you for every smile, every conversation, every memory, every moment and every experience we've shared. Thank you for allowing me to love you and for giving me someone to call mine.</p>
+
+    <p>My baby, whatever happens in the future, I want you to always remember that there is someone here who genuinely loves you, cares about you, prays for you and wants the very best for you.</p>
+
+    <p><b>Happy anniversary to us, my love. ❤️🥹<br>
+    MAMID is a year older today and bond stronger. 💪🏾💯</b></p>
+
+    <p>May this be just another chapter in a very long story for us. May we celebrate many more anniversaries together. May our love continue to grow deeper, stronger and more beautiful with every passing year.</p>
+
+    <p>I love you more than I can properly put into words, and I will continue to love you, choose you, appreciate you and stand by you. ❤️</p>
+
+    <p><b>Happy Anniversary, my beautiful woman. 🥹❤️</b><br>
+    Here's to us, to everything we've been through, everything we are today, and everything beautiful that is still ahead of us.</p>
+
+    <p style="font-size:1.35rem;text-align:center"><b>I LOVE YOU, MY BABY. ❤️🫶🏽<br>
+    Forever and always, by Allah's grace. 🤲🏽❤️</b></p>
+  </div>
+</div>
+</section>
+
+<section>
+<div class="wrap">
+  <div class="section-kicker">Our soundtrack</div>
+  <h2>Songs that feel like us.</h2>
+  <div class="love-grid">
+    <div class="love-item">🎵 <b>Orekelewa</b></div>
+    <div class="love-item">🎵 <b>Omo Temi</b></div>
+    <div class="love-item">🎵 <b>My Favorite Sweet Valentine</b></div>
+  </div>
+  <p class="smallcaps" style="margin-top:18px">Music can be added here later if you want a personal audio file.</p>
+</div>
+</section>
+
+<section>
+<div class="wrap">
+  <div class="section-kicker">The archive</div>
+  <h2>Our Anniversary Book.</h2>
+  <p class="lead">This page is not meant to end tonight. Every anniversary gets another chapter.</p>
+  <div class="archive">
+    <div class="yearcard"><div class="year">2026</div><h3>The Beginning of the Archive</h3><p>Our first permanent chapter. The year we decided to make our memories something we could return to.</p></div>
+    <div class="yearcard locked"><div class="year">2027</div><h3>Another Year, Another Chapter</h3><p>Come back next anniversary and write what this year taught us.</p></div>
+    <div class="yearcard locked"><div class="year">2028+</div><h3>Still Choosing You</h3><p>More memories. More pictures. More prayers. More life.</p></div>
+  </div>
+</div>
+</section>
+
+<section class="final">
+<div class="wrap">
+  <div class="smallcaps">18 August 2026</div>
+  <div class="big">Happy Anniversary,<br>My Angel. ❤</div>
+  <p class="lead" style="margin:0 auto">
+    If you're reading this again years from now, I hope you smile.
+    I hope you remember the two people we were when we started.
+    And I hope you know that, through every chapter, I kept choosing you.
+  </p>
+  <p style="margin-top:35px;font-size:1.25rem"><b>Alhamdulillah for MAMID.</b></p>
+  <a class="btn" href="#top">Back to the beginning ↑</a>
+</div>
+</section>
+
+<footer>
+  Made for MAMID · Abdulhamid & Mariam · Since 18 August 2023
+</footer>
+
+<script>
+document.body.classList.add('locked');
+const unlock = () => {
+  const value = document.getElementById('passwordInput').value;
+  if (value === 'Mamid') {
+    document.body.classList.remove('locked');
+    document.body.classList.add('unlocked');
+    sessionStorage.setItem('mamidUnlocked','yes');
+    document.getElementById('passwordInput').value = '';
+  } else {
+    const msg = document.getElementById('wrongPassword');
+    msg.style.visibility = 'visible';
+    document.getElementById('passwordInput').select();
+  }
+};
+document.getElementById('unlockBtn').addEventListener('click', unlock);
+document.getElementById('passwordInput').addEventListener('keydown', e => {
+  if (e.key === 'Enter') unlock();
+});
+if (sessionStorage.getItem('mamidUnlocked') === 'yes') {
+  document.body.classList.remove('locked');
+  document.body.classList.add('unlocked');
+}
+</script>
+
+</body>
+</html>
